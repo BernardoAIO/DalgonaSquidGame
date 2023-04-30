@@ -12,10 +12,10 @@ width, height = 1280, 720
 
 
 def main():
-    names_mark = ["Imagens/circle_mark.png", "Imagens/square_mark.png", "Imagens/star_mark.png"]
+    names_mark = ["Images/circle_mark.png", "Images/square_mark.png", "Images/star_mark.png"]
 
-    names = ["Imagens/circle.png", "Imagens/square.png", "Imagens/star.png", "Imagens/circle_crack.png",
-             "Imagens/square_crack.png", "Imagens/star_crack.png"]
+    names = ["Images/circle.png", "Images/square.png", "Images/star.png", "Images/circle_crack.png",
+             "Images/square_crack.png", "Images/star_crack.png"]
 
     num_form = random.randint(0, 2)
 
@@ -31,7 +31,7 @@ def main():
 
     cookie_img_exit_crack = cv.imread(names[num_form + 3])
 
-    blood_img = cv.imread("Imagens/blood.png")
+    blood_img = cv.imread("Images/blood.png")
 
     blood_img = cv.resize(blood_img, (1280, 720))
 
@@ -62,8 +62,6 @@ def main():
                           min_tracking_confidence=0.80)
     mpDraw = mp.solutions.drawing_utils
     mp_drawing_styles = mp.solutions.drawing_styles
-
-    # ps.playsound('needle.mp3')
 
     while True:
 
@@ -114,7 +112,7 @@ def main():
                             elif ((cookie_img[y_indicador][x_indicador][0] == 0) and (
                                     cookie_img[y_indicador][x_indicador][1] == 0) and (
                                           cookie_img[y_indicador][x_indicador][2] == 255) and start == True):
-                                ps.playsound('Sons/crack.wav', False)
+                                ps.playsound('Sounds/crack.wav', False)
                                 cookie_img_exit = cookie_img_exit_crack
                                 start = False
                                 error += 1
@@ -127,17 +125,17 @@ def main():
             cv.imshow("Dalgona", exit)
 
         elif cont_line > line:
-            ps.playsound("Sons/win.mp3", False)
+            ps.playsound("Sounds/win.mp3", False)
             exit = cv.addWeighted(frame, 0.2, cookie_img_exit, 0.8, 0)
-            cvz.putTextRect(exit, f'Ganhou', (480, 400), scale=5, colorR=(32, 165, 218), offset=30, thickness=7)
+            cvz.putTextRect(exit, f'YOU WIN', (480, 400), scale=5, colorR=(32, 165, 218), offset=30, thickness=7)
             cv.imshow("Dalgona", exit)
             if cv.waitKey(0) == ord('q'):
                 break
 
         else:
-            ps.playsound("Sons/gum_shot.wav", False)
+            ps.playsound("Sounds/gum_shot.wav", False)
             exit = cv.addWeighted(frame, 0.2, blood_img, 0.8, 0)
-            cvz.putTextRect(exit, f'Game Over', (400, 400), scale=5, colorR=(0, 0, 0), offset=30, thickness=7)
+            cvz.putTextRect(exit, f'GAME OVER', (400, 400), scale=5, colorR=(0, 0, 0), offset=30, thickness=7)
             cv.imshow("Dalgona", exit)
             if cv.waitKey(0) == ord('q'):
                 break
