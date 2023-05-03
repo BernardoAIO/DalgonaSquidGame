@@ -1,7 +1,6 @@
 import playsound as ps
 import mediapipe as mp
 import cvzone as cvz
-import pygame as pg
 import numpy as np
 import cv2 as cv
 import random
@@ -20,8 +19,6 @@ def main():
     num_form = random.randint(0, 2)
 
     start = False
-
-    pg.init()
 
     line = cont_line = error = 0
 
@@ -51,7 +48,7 @@ def main():
     positions = {}
 
     timestart = time.time()
-    totaltime = 200
+    totaltime = 70
 
     cap = cv.VideoCapture(0)
     cap.set(3, 1280)
