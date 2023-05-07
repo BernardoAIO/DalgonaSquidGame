@@ -3,7 +3,11 @@
 ## Python implementation of the Dalgona Game using hand tracking from MediaPipe
 
 This project was built to show some use cases for computer vision (including hand landmarks and gamification) using
-OpenCV. It's a simple game that you play using the camera of your computer and your fingers to control/cut the cookie.
+OpenCV. It's a simple game that you play using the camera of your computer and your fingers to control/cut the cookie. 
+
+![circle](https://user-images.githubusercontent.com/121193399/236656370-f79d69d2-3320-4f24-aed3-507c440a82c6.png)
+![square](https://user-images.githubusercontent.com/121193399/236656378-7a0c917d-d2fd-42da-8e5a-31ba9c3f49f2.png)
+![star](https://user-images.githubusercontent.com/121193399/236656382-fb5edbe7-37f2-423a-88dd-1e21ccf567f1.png)
 
 Important Libraries:
 * OpenCV - read and resize images, acess camera...
