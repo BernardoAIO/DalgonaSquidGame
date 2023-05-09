@@ -48,7 +48,7 @@ def main():
     positions = {}
 
     timestart = time.time()
-    totaltime = 70
+    totaltime = 100
 
     cap = cv.VideoCapture(0)
     cap.set(3, 1280)
@@ -119,6 +119,10 @@ def main():
             exit = cv.addWeighted(frame, 0.2, cookie_img_exit, 0.8, 0)
             cvz.putTextRect(exit, f'{int(totaltime - (time.time() - timestart))}', [1080, 75], colorR=(0, 0, 0),
                             scale=3, offset=20)
+
+            # Full Screen
+            cv.namedWindow("Dalgona", cv.WND_PROP_FULLSCREEN)
+            cv.setWindowProperty("Dalgona", cv.WND_PROP_FULLSCREEN, cv.WINDOW_FULLSCREEN)
             cv.imshow("Dalgona", exit)
 
         elif cont_line > line:
